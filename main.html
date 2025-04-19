@@ -5,9 +5,15 @@
   <title>Redirecting...</title>
   <script>
     window.onload = () => {
-      const path = decodeURIComponent(window.location.pathname.slice(1));
-      const newUrl = `roblox://placeID=85896571713843&gameInstanceId=${encodeURIComponent(path)}`;
-      window.location.href = newUrl;
+      const params = new URLSearchParams(window.location.search);
+      const jobId = params.get('jobid');
+
+      if (jobId) {
+        const robloxUrl = `roblox://placeID=85896571713843&gameInstanceId=${encodeURIComponent(jobId)}`;
+        window.location.href = robloxUrl;
+      } else {
+        document.body.innerHTML = "<h2>No job ID found in URL.</h2>";
+      }
     };
   </script>
 </head>
