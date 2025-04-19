@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    window.onload = () => {
+      const path = decodeURIComponent(window.location.pathname.slice(1));
+      const newUrl = `roblox://placeID=85896571713843&gameInstanceId=${encodeURIComponent(path)}`;
+      window.location.href = newUrl;
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting to Roblox...</p>
+</body>
+</html>
